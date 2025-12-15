@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeonFocus Ultra</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="background">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <div class="glass-container">
+      <header>
+        <div class="brand">
+          <i class="bx bx-pulse"></i>
+          <div>
+            <h2>NeonFocus<span class="pro">Ultra</span></h2>
+          </div>
+        </div>
+
+        <div class="controls">
+          <div class="time-selector">
+            <button class="time-btn active" data-time="60">1 Min</button>
+            <button class="time-btn" data-time="180">3 Min</button>
+            <button class="time-btn" data-time="300">5 Min</button>
+          </div>
+          <div class="difficulty-box">
+            <select id="difficulty">
+              <option value="easy">Easy</option>
+              <option value="medium" selected>Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+        </div>
+      </header>
+
+      <div class="typing-area" id="typing-area">
+        <div class="text-display">
+          <p id="paragraph"></p>
+        </div>
+        <div class="overlay-fade"></div>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-item">
+          <p>Time</p>
+          <span id="time">60s</span>
+        </div>
+        <div class="stat-item">
+          <p>Mistakes</p>
+          <span id="mistakes">0</span>
+        </div>
+        <div class="stat-item highlight">
+          <p>WPM</p>
+          <span id="wpm">0</span>
+        </div>
+        <div class="stat-item">
+          <p>Accuracy</p>
+          <span id="accuracy">100%</span>
+        </div>
+        <button id="reset-btn" title="Restart Test">
+          <i class="bx bx-refresh"></i>
+        </button>
+      </div>
+    </div>
+
+    <input type="text" class="input-field" />
+
+    <div class="modal-overlay" id="result-modal">
+      <div class="modal-content">
+        <div class="modal-header-simple">
+          <h3>Session Complete</h3>
+          <button class="icon-close" onclick="closeResults()">
+            <i class="bx bx-x"></i>
+          </button>
+        </div>
+
+        <div class="score-grid">
+          <div class="score-card">
+            <span>WPM</span>
+            <h2 id="final-wpm">0</h2>
+          </div>
+          <div class="score-card">
+            <span>Accuracy</span>
+            <h2 id="final-acc">0%</h2>
+          </div>
+        </div>
+
+        <div class="analysis-box">
+          <h4><i class="bx bx-crosshair"></i> Weak Points</h4>
+          <p id="analysis-text">analyzing...</p>
+          <div class="weak-keys">
+            <span>Worst Keys:</span>
+            <div id="keys-list"></div>
+          </div>
+        </div>
+
+        <button class="primary-action-btn" id="modal-retry-btn">
+          <i class="bx bx-revision"></i> Start New Test
+          <span class="key-hint">Press Enter</span>
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
